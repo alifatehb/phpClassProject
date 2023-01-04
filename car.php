@@ -2,36 +2,19 @@
 
 class car
 {
-    private $color;
+    public $color;
     private $weight;
-
-    /**
-     * @param $color
-     * @param $weight
-     */
-    public function __construct($color, $weight)//with alt+Insert-> construct
+    static  $counter= 0;
+    public $myCounter= 0;
+    public  function __construct()
     {
-        $this->color = $color;
-        $this->weight = $weight;
+        $this->myCounter++;
+        self::$counter++;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getColor()//with alt+Insert-> getter and setter
-    {
-        return $this->color;
-    }
-
-    /**
-     * @param mixed $color
-     */
-    public function setColor($color)//with alt+Insert-> getter and setter
-    {
-        $this->color = $color;
-    }
-
-
 }
 
+$myCar = new car();
+echo car::$counter."  ".$myCar->myCounter."<br>";
+$myCar2 = new car();
+echo car::$counter."  ".$myCar2->myCounter."<br>";
 
