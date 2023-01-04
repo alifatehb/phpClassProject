@@ -4,38 +4,26 @@ class car
 {
     private $color;
     private $weight;
-    private $year;
-    private $availableColors = [
-        'red', 'green', 'blue', 'white'
-    ];
 
-    public function setYear($Year)
+    public function __construct($color = "green", $weight = 3000)//execute after creat object
     {
-        $this->year = $Year;
+        $this->color = $color;
+        $this->weight = $weight;
     }
-
-    public function getYear()
-    {
-        return $this->year;
+    public function getColor(){
+        return $this-> color;
     }
-
-    public function setColor($color)
+    public function __destruct()
     {
-        if (in_array($color, $this->availableColors)) {
-            $this->color = $color;
-        }
-    }
-
-    public function getColor()
-    {
-        return $this->color;
+        echo "i am destroyed".@$this->color.PHP_EOL;
     }
 }
 
-$car = new car();
-$car->setColor("red");
-$car2 = clone $car; // two different object
-$car3 = $car; //same pointer
-$car4 = & $car;//same object
-$car->setYear(1010);
-var_dump($car,$car2);
+$myCar = new car("red", 204);
+$myCar2 = new car();
+echo $myCar->getColor().PHP_EOL;
+echo $myCar2->getColor();
+
+unset($myCar);//destroyed obj manually
+sleep(2);//freeze the compiler
+
