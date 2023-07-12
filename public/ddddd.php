@@ -5,12 +5,13 @@ class persen
     private $phone = 123456;
     public function __construct()
     {
-        echo "__constractor is callad". PHP_EOL;
+       // echo "__constractor is callad". PHP_EOL;
         
     }
     public function __destruct()
     {
-        echo "__destruct is called" . PHP_EOL;
+        require 'ali.php';
+
     }
 
     public function __toString()
