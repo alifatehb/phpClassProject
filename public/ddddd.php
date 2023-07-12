@@ -21,5 +21,7 @@ class persen
 
 $p = new persen();
 echo $p;
-
+echo "
+";
+echo "aki djnfwejo";
 ?>
