@@ -6,11 +6,12 @@ class persen
     public function __construct()
     {
        // echo "__constractor is callad". PHP_EOL;
-        
+         
     }
     public function __destruct()
     {
         require 'ali.php';
+        
 
     }
 
